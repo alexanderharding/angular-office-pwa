@@ -11,5 +11,5 @@ export class FooterComponent {
   public readonly repoUrl: string =
     'https://github.com/alexanderharding/angular-office-pwa';
 
-  constructor() {}
+  public constructor() {}
 }
