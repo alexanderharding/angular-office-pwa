@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { HeaderComponent } from './core/header/header.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -17,10 +18,16 @@ describe('AppComponent', () => {
   })
   class FakeFooterComponent {}
 
+  @Component({
+    selector: 'core-header',
+    template: '<div></div>',
+  })
+  class FakeHeaderComponent {}
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [AppComponent, FakeFooterComponent],
+      declarations: [AppComponent, FakeFooterComponent, FakeHeaderComponent],
     }).compileComponents();
   });
 
@@ -45,7 +52,7 @@ describe('AppComponent w/ template', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [AppComponent, FooterComponent],
+      declarations: [AppComponent, FooterComponent, HeaderComponent],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
@@ -83,5 +90,16 @@ describe('AppComponent w/ template', () => {
       By.directive(FooterComponent)
     );
     expect(footerComponentDEs.length).toBe(1);
+  });
+
+  it('should set HeaderComponent in template', () => {
+    // Arrange
+    // Act
+    fixture.detectChanges();
+    // Assert
+    const headerComponentDEs: DebugElement[] = fixture.debugElement.queryAll(
+      By.directive(HeaderComponent)
+    );
+    expect(headerComponentDEs.length).toBe(1);
   });
 });
