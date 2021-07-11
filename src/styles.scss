@@ -19,3 +19,33 @@ html {
   background: var(--dark-violet);
   color: white;
 }
+
+.form-floating.custom-form-floating {
+  input.form-control {
+    height: calc(3rem + 2px);
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-bottom: 0.25rem !important;
+    border-radius: 0 !important;
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+  }
+
+  input.form-control:focus {
+    box-shadow: none;
+  }
+
+  input.form-control.is-invalid {
+    color: var(--bs-red);
+  }
+
+  label {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  input.form-control ~ label {
+    transform-origin: -30% 0;
+  }
+}
