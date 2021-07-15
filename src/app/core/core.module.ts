@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
 import { BannerComponent } from './banner/banner.component';
@@ -16,4 +16,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
   imports: [SharedModule],
   exports: [NotFoundComponent, FooterComponent, HeaderComponent],
 })
-export class CoreModule {}
+export class CoreModule {
+  public constructor(@Optional() @SkipSelf() parentModule?: CoreModule) {
+    if (parentModule)
+      throw new Error(`CoreModule is already loaded. Import it in the AppModule
+        only`);
+  }
+}
