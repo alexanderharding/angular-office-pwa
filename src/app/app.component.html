@@ -1,6 +1,9 @@
 <div id="wrapper" class="d-flex flex-column h-100">
   <core-header></core-header>
   <main role="main" class="h-100">
+    <core-spinner
+      [isSpinnerActive]="(isSpinnerActive$ | async) ?? false"
+    ></core-spinner>
     <router-outlet></router-outlet>
   </main>
   <core-footer></core-footer>
