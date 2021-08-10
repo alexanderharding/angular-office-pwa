@@ -21,16 +21,20 @@ describe('BannerComponent', () => {
 
   it('should create', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(component).toBeTruthy();
   });
 
   it('should have set pageTitle correctly', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(component.pageTitle).toBeUndefined();
   });
@@ -54,8 +58,10 @@ describe('BannerComponent w/ template', () => {
 
   it('should create', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(component).toBeTruthy();
   });
@@ -63,8 +69,10 @@ describe('BannerComponent w/ template', () => {
   it('should set pageTitle in template', () => {
     // Arrange
     component.pageTitle = 'App Title';
+
     // Act
     fixture.detectChanges();
+
     // Assert
     const anchorDEs: DebugElement[] = fixture.debugElement.queryAll(
       By.css('a')

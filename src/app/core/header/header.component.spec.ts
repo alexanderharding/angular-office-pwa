@@ -41,16 +41,20 @@ describe('HeaderComponent', () => {
 
   it('should create', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(component).toBeTruthy();
   });
 
   it('should have set appTitle correctly', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(component.appTitle).toBe(appTitle);
   });
@@ -79,16 +83,20 @@ describe('HeaderComponent w/ template', () => {
 
   it('should create', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(component).toBeTruthy();
   });
 
   it('should set BannerComponent in template', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     const bannerComponentDEs: DebugElement[] = fixture.debugElement.queryAll(
       By.directive(BannerComponent)

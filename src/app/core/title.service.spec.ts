@@ -17,14 +17,18 @@ describe('TitleService', () => {
 
   it('should be created', () => {
     // Arrange
+
     // Act
+
     // Assert
     expect(service).toBeTruthy();
   });
 
   it('should have set appTitle correctly', () => {
     // Arrange
+
     // Act
+
     // Assert
     expect(service.appTitle).toBe('Office');
   });
@@ -33,8 +37,10 @@ describe('TitleService', () => {
     it('should call setTitle on Title with correct value', () => {
       // Arrange
       const newTitle: string = 'Title';
+
       // Act
       service.setTitle(newTitle);
+
       // Assert
       expect(mockTitle.setTitle).toHaveBeenCalledOnceWith(
         `${newTitle} | ${service.appTitle}`

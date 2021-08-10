@@ -64,16 +64,20 @@ describe('FooterComponent w/ template', () => {
 
   it('should create', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(component).toBeTruthy();
   });
 
   it('should set gitHubUrl in template', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     const anchorDEs: DebugElement[] = fixture.debugElement.queryAll(
       By.css('a')
@@ -86,8 +90,10 @@ describe('FooterComponent w/ template', () => {
 
   it('should set repoUrl in template', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     const anchorDEs: DebugElement[] = fixture.debugElement.queryAll(
       By.css('a')

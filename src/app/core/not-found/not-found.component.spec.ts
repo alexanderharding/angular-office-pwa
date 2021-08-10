@@ -1,4 +1,4 @@
-import { DebugElement } from '@angular/core';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
@@ -25,16 +25,20 @@ describe('NotFoundComponent', () => {
 
   it('should create', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(component).toBeTruthy();
   });
 
   it('should have set pageTitle correctly', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(component.pageTitle).toBe('404');
   });
@@ -42,8 +46,10 @@ describe('NotFoundComponent', () => {
   it(`should have called setTitle method on TitleService with correct
     value`, () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(mockTitleService.setTitle).toHaveBeenCalledOnceWith('Error');
   });
@@ -59,6 +65,7 @@ describe('NotFoundComponent w/ template', () => {
     await TestBed.configureTestingModule({
       declarations: [NotFoundComponent],
       providers: [{ provide: TitleService, useValue: mockTitleService }],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 
@@ -69,16 +76,20 @@ describe('NotFoundComponent w/ template', () => {
 
   it('should create', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     expect(component).toBeTruthy();
   });
 
   it('should set pageTitle in the template', () => {
     // Arrange
+
     // Act
     fixture.detectChanges();
+
     // Assert
     const headerDEs: DebugElement[] = fixture.debugElement.queryAll(
       By.css('h1')
