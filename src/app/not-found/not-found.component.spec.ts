@@ -2,7 +2,7 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { TitleService } from '../title.service';
+import { TitleService } from '../core/title.service';
 import { NotFoundComponent } from './not-found.component';
 
 describe('NotFoundComponent', () => {

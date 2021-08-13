@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { NotFoundComponent } from './core/not-found/not-found.component';
-
 const routes: Routes = [
   {
     path: '404',
-    component: NotFoundComponent,
+    loadChildren: () =>
+      import('./not-found/not-found.component').then((m) => m.NotFoundModule),
   },
   { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
