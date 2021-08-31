@@ -1,0 +1,26 @@
+<div
+  [formGroup]="parentForm"
+  [class.is-invalid]="
+    showOverride && controlData.isTouched && controlData.errorMessage
+  "
+  *ngIf="{
+    isTouched: (isTouched$ | async),
+    errorMessage: (errorMessage$ | async)
+  } as controlData"
+>
+  <ng-content></ng-content>
+  <div
+    class="position-relative"
+    *ngIf="showOverride && controlData.isTouched && controlData.errorMessage"
+  >
+    <div
+      class="d-block"
+      [ngClass]="{
+        'invalid-tooltip': errorMessageType === 'tooltip',
+        'invalid-feedback fw-bold': errorMessageType === 'feedback'
+      }"
+    >
+      <ng-container>{{ controlData.errorMessage }}</ng-container>
+    </div>
+  </div>
+</div>
